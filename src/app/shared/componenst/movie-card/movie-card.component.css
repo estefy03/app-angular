@@ -1,0 +1,12 @@
+.card-body{
+    background-color: #0a0b1c;
+
+}
+.card {
+    height: 450px;
+    text-align: center;
+}
+.imagen {
+    height: 400px;
+    object-fit: cover;
+}
