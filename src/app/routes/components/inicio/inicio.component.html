@@ -5,8 +5,8 @@
 </section>
 <section class="my-5 mx-5">
     <div class="mb-3 input-group">
-        <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-search"></i>>
-            <input type="search" class="form-control" id="exampleFormControlInput1"
+        <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-search"></i>
+            <input  class=" form-control"type="Number" id="exampleFormControlInput1"
                 placeholder="Buscar películas y series">
         </span>
     </div>
@@ -14,13 +14,16 @@
 <section>
     <div class="mx-5 d-flex ">
         <div class="card-group">
-            <a href="#" class="btn btn-outline-info">Todos</a>
+    <button [ngClass]="filter === 'Todos' ? 'btn-selected' :''"
+     class="btn btn-outline-info" (click)="changeFilter('Todos')">Todos</button>
         </div>
         <div class="card-group">
-            <a href="#" class="btn btn-outline-info">Películas</a>
+            <button [ngClass]="filter === 'Todos' ? 'btn-selected' :''" 
+            class="btn btn-outline-info" (click)="changeFilter('Películas')">Películas</button>
         </div>
         <div class="card-group">
-            <a href="#" class="btn btn-outline-info">Series</a>
+            <button [ngClass]="filter === 'Todos' ? 'btn-selected' :''"
+             class="btn btn-outline-info" (click)="changeFilter('Series')">Series</button>
         </div>
     </div>
 </section>
@@ -29,5 +32,39 @@
         <h4>Todos</h4>
         <h6>(120)</h6>
     </div>
-    <app-movie-card></app-movie-card>
+    <!--<app-movie-card></app-movie-card>-->
+    <div class="row row-cols-1 row-cols-sm-4 g-4">
+        <div class="col" *ngFor="let movie of movies_series">
+            <div *ngIf="movie.category === 'Movie' && filter === 'Películas'">
+                <div class="card">
+                    <img [src]="movie.image" class="card-img-top imagen " [alt]="movie.name">
+                    <div class="card-body text-light">
+                        <h2>{{movie.name}}</h2>
+                        <p class="card-text ">{{movie.description}}</p>
+                        <p class="card-text ">RATING: {{movie.rating}}</p>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="movie.category === 'series' && filter === 'Series'">
+                <div class="card">
+                    <img [src]="movie.image" class="card-img-top imagen " [alt]="movie.name">
+                    <div class="card-body text-light">
+                        <h2>{{movie.name}}</h2>
+                        <p class="card-text ">{{movie.description}}</p>
+                        <p class="card-text ">RATING: {{movie.rating}}</p>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="filter === 'Todos'">
+                <div class="card">
+                    <img [src]="movie.image" class="card-img-top imagen " [alt]="movie.name">
+                    <div class="card-body text-light">
+                        <h2>{{movie.name}}</h2>
+                        <p class="card-text ">{{movie.description}}</p>
+                        <p class="card-text ">RATING: {{movie.rating}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
