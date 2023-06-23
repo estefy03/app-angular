@@ -77,11 +77,31 @@ export class InicioComponent {
 
    ];
 
+   movies_series_aux : moviesSeries | undefined = {
+      id: 0,
+      name: '',
+      description: '',
+      image: '',
+      rating: '',
+      category: 'Movie'
+   };
+
+   search: string = '';
+
    filter:'Todos' | 'Películas' | 'Series' = 'Todos';
 
    changeFilter =(filtro: 'Todos' | 'Películas' | 'Series') => {
     this.filter = filtro;
    };
   
+   searchMovie() {
+    let peliculaEncontrada;
+    peliculaEncontrada = this.movies_series.find((movie) => {        
+        return movie.name === this.search;
+    });
+    if (peliculaEncontrada) {
+      this.movies_series_aux = peliculaEncontrada;
+    }
+   }
   
 }
