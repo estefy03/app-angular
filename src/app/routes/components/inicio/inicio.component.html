@@ -32,8 +32,25 @@
         <h4>Todos</h4>
         <h6>(120)</h6>
     </div>
+    <div class="container">
+        <div class="row" *ngIf="filter === 'Todos'">
+            <div class="col-3 m-2" *ngFor="let item of movies_series">
+                <app-movie-card [titulo]="item.title || item.name" [img]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + item.poster_path"></app-movie-card>
+            </div>
+        </div>
+        <div class="row" *ngIf="filter === 'Películas'">
+            <div class="col-3 m-2" *ngFor="let item of movies">
+                <app-movie-card [titulo]="item.title || item.name" [img]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + item.poster_path"></app-movie-card>
+            </div>
+        </div>
+        <div class="row" *ngIf="filter === 'Series'">
+            <div class="col-3 m-2" *ngFor="let item of series">
+                <app-movie-card [titulo]="item.title || item.name" [img]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + item.poster_path"></app-movie-card>
+            </div>
+        </div>
+    </div>
     <!--<app-movie-card></app-movie-card>-->
-    <div class="card" style="width: 20%;" *ngIf="movies_series_aux?.name">
+   <!--<div class="card" style="width: 20%;" *ngIf="movies_series_aux?.name">
         <img [src]="movies_series_aux?.image" class="card-img-top imagen " [alt]="movies_series_aux?.name">
         <div class="card-body text-light">
             <h2>{{movies_series_aux?.name}}</h2>
@@ -74,5 +91,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
