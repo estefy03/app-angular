@@ -61,9 +61,33 @@ export class InicioComponent {
     })
    }
 
-   getAllMovies(){}
+   getAllMovies(){
+    this._movieDBService.getMovies().subscribe({
+      next: (response) => {
+        this.movies = response.results;
+        console.log('VARIABLE movies', this.movies);
+      },
+      error: (error) => {
+        console.log('ERROR', error);
+      },
+      complete() {
+        console.log('LA EJECUCión terminó');
+      },
+    })
+  }
 
-   getAllTvShows(){}
-
-
-}
+  getAllTvShows(){
+    this._movieDBService.getSeries().subscribe({
+      next: (response) => {
+        this.series = response.results;
+        console.log('VARIABLE series', this.series);
+      },
+      error: (error) => {
+        console.log('ERROR', error);
+      },
+      complete() {
+        console.log('LA EJECUCión terminó');
+      },
+    })
+   }
+  }
