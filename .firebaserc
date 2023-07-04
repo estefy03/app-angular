@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pelisup-471c2": {
+      "hosting": {
+        "angular2023": [
+          "pelisup-471c2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pelisup-471c2"
+  }
+}

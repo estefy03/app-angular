@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "angular2023",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
