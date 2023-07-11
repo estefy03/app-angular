@@ -1,8 +1,8 @@
-export interface moviesSeries {
+export interface MoviesSeries {
     id: number,
     name: string,
     description: string,
-    image:string,
+    image: string,
     rating: string,
-    category: "Movie" | "series"
+    category: 'Movie' | 'Serie' 
 }

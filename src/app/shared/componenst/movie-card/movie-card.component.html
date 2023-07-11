@@ -1,6 +1,10 @@
-<div class="card">
-    <img src="{{img}}" class="card-img-top imagen " alt="...">
-    <div class="card-body text-light">
-        <p class="card-text">{{titulo}}</p>
+<div class="card col-4 mx-2" style="width: 18rem; margin-bottom: 100px;">
+    <img src="{{img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">{{titulo}}</p>
     </div>
-</div>
+    <div class="card-footer">
+      <button *ngIf="estadoBoton" class="btn btn-outline-success" (click)="addMovie()">Agregar a mi lista</button>
+      <button *ngIf="!estadoBoton" class="btn btn-outline-danger" (click)="deleteMovie()">Eliminar de mi lista</button>
+    </div>
+  </div>

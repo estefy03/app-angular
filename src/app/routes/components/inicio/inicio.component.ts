@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MovieDBService } from 'src/app/services/movie-db.service';
-import { moviesSeries } from 'src/app/types/moviesSeries';
+import { MoviesSeries } from 'src/app/types/moviesSeries';
 
 @Component({
   selector: 'app-inicio',

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthUserService } from 'src/app/services/auth-user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ingresar',
@@ -15,7 +16,8 @@ export class IngresarComponent {
   })
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthUserService
+    private authService: AuthUserService,
+    private router: Router,
   ){}
 
   campoEsValido(campo: string) {
@@ -34,6 +36,7 @@ export class IngresarComponent {
       console.log('RESPUESTA', response);
       response = JSON.stringify(response);
       localStorage.setItem('user', response);
+      this.router.navigate(['dashboard']);
       alert('USUARIO CORRECTO')
     }).catch((error) => {
       console.log('ERROR', error);
@@ -62,6 +65,7 @@ export class IngresarComponent {
       console.log('RESPUESTA', response);
       response = JSON.stringify(response);
       localStorage.setItem('user', response);
+      this.router.navigate(['dashboard']);
       alert('USUARIO CORRECTO')
     }).catch((error) => {
       console.log('ERROR', error);
