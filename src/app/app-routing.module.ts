@@ -4,6 +4,7 @@ import { InicioComponent } from './routes/components/inicio/inicio.component';
 import { PeliculasComponent } from './routes/components/peliculas/peliculas.component';
 import { SeriesComponent } from './routes/components/series/series.component';
 import { IngresarComponent } from './routes/components/ingresar/ingresar.component';
+import { DashboardComponent } from './routes/components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:"ingresar",
     component: IngresarComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
   },
   {
     path:"**",

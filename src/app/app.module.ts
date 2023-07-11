@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -24,8 +28,12 @@ import { environment } from '../environments/environment';
     FormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+
   ],
-  providers: [],
+  providers: [ { provide: FIREBASE_OPTIONS, useValue: environment.firebase } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
