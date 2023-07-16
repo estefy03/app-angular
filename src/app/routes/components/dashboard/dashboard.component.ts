@@ -10,6 +10,7 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 export class DashboardComponent {
 
   totalPeliculas = 0;
+  totalSeries = 0;
 
   constructor(
     private router: Router,
@@ -34,6 +35,12 @@ export class DashboardComponent {
     })
   }
 
-  obtenerSeries(){}
+  obtenerSeries(){
+    this._firestoreService.getSerie().subscribe({
+      next: (response) => {
+        this.totalSeries = response.length;
+      }
+    })
+  }
 
 }

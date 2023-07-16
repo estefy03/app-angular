@@ -1,6 +1,5 @@
 .card-body{
     background-color: #0a0b1c;
-
 }
 .card {
     height: 450px;
@@ -9,4 +8,8 @@
 .imagen {
     height: 400px;
     object-fit: cover;
+}
+.card-text {
+    color: white;
+    height: 25px;
 }

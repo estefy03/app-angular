@@ -1,10 +1,10 @@
-<div class="card col-4 mx-2" style="width: 18rem; margin-bottom: 100px;">
+<div class="card col-4 mx-2" style="width: 18rem; margin-bottom: 150px;">
     <img src="{{img}}" class="card-img-top" alt="...">
     <div class="card-body">
       <p class="card-text">{{titulo}}</p>
-    </div>
-    <div class="card-footer">
-      <button *ngIf="estadoBoton" class="btn btn-outline-success" (click)="addMovie()">Agregar a mi lista</button>
-      <button *ngIf="!estadoBoton" class="btn btn-outline-danger" (click)="deleteMovie()">Eliminar de mi lista</button>
+      <div class="card-footer">
+        <button *ngIf="estadoBoton" class="btn btn-outline-success" (click)="addMovie()">Agregar a mi lista</button>
+        <button *ngIf="!estadoBoton" class="btn btn-outline-danger" (click)="deleteMovie()">Eliminar de mi lista</button>
+      </div>
     </div>
   </div>
